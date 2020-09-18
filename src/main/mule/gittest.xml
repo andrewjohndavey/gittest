@@ -4,7 +4,10 @@
 	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="b98b05ad-dc01-4a99-8e73-649ff40eb0fe" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
 	<flow name="gittestFlow" doc:id="432e94bc-0983-4eef-9685-9b4b9639ae30" >
-		<http:listener doc:name="Listener" doc:id="2a81d177-6887-4f06-942d-873583c258b4" />
+		<http:listener doc:name="Listener" doc:id="2a81d177-6887-4f06-942d-873583c258b4" config-ref="HTTP_Listener_config"/>
 	</flow>
 </mule>
